@@ -1,7 +1,7 @@
 let data = [
   {
     "_id": "61899769ae82d28e43f44665",
-    "fatherName": "Dad,
+    "fatherName": "Dad",
     "motherName": "Mom",
     "fatherPhone": "1234567890",
     "motherPhone": "1234567890",
@@ -19,7 +19,7 @@ let data = [
   },
   {
     "_id": "61899960ae82d28e43f44666",
-    "fatherName": "Dad,
+    "fatherName": "Dad",
     "motherName": "Mom",
     "fatherPhone": "1234567890",
     "motherPhone": "1234567890",
