@@ -4,13 +4,14 @@ var dbo = require("../db/conn");
 const cors = require('cors');
 // var ObjectID = require('mongodb').ObjectID;
 const { ObjectId } = require('bson');
-
+var path = require('path');
 const corsOptions = {
   origin: 'http://localhost:3000',
 }
 /* GET home page. */
-router.get('/', cors(corsOptions), function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+  // res.render('index', { title: 'Express' });
+  res.sendfile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // This section will help you create a new document.

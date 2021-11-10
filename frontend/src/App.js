@@ -1,13 +1,12 @@
-import { Button } from "@mui/material";
-import { Box } from "@mui/system";
-import React, { useState } from "react"
-import { ListRegistrations } from "./components/ListRegistrations";
-import { RegistrationForm } from './components/RegistrationForm';
+import React, { useState } from "react";
+import { Registrations } from "./components/ListRegistrations";
+import { RegistrationForm } from "./components/RegistrationForm";
+import { Box, Button } from '@mui/material';
 
 export const RegistrationContext = React.createContext("registration");
 
 const App = () => {
-  const [view, setView] = useState("list");
+  const [view, setView] = React.useState("register");
   const [homeAddress1, setHomeAddress1] = useState("");
   const [homeAddrCity, setHomeAddrCity] = useState("");
   const [homeAddrState, setHomeAddrState] = useState("");
@@ -42,11 +41,11 @@ const App = () => {
     setGrade("");
   }
   return (
-    <RegistrationContext.Provider value={{intialize, homeAddress1, setHomeAddress1, homeAddrCity, setHomeAddrCity, homeAddrState, setHomeAddrState, homeAddrZip, setHomeAddrZip, homeAddrPhone, setHomeAddrPhone, childResidesWith, setChildResidesWith, childResidesWithRelation, setChildResidesWithRelation, fatherName, setFatherName, motherName, setMotherName, fatherPhone, setFatherPhone, motherPhone, setMotherPhone, fatherEmail, setFatherEmail, motherEmail, setMotherEmail, studentName, setStudentName, grade, setGrade }}>
+    <RegistrationContext.Provider value={{ intialize, homeAddress1, setHomeAddress1, homeAddrCity, setHomeAddrCity, homeAddrState, setHomeAddrState, homeAddrZip, setHomeAddrZip, homeAddrPhone, setHomeAddrPhone, childResidesWith, setChildResidesWith, childResidesWithRelation, setChildResidesWithRelation, fatherName, setFatherName, motherName, setMotherName, fatherPhone, setFatherPhone, motherPhone, setMotherPhone, fatherEmail, setFatherEmail, motherEmail, setMotherEmail, studentName, setStudentName, grade, setGrade }}>
       <div className="app">
         {view === "list" && <Box sx={{ textAlign: "center", paddingTop: 4, paddingBottom: 4 }}><Button variant="contained" onClick={() => setView("register")}>Add Registration</Button></Box>}
         {view === "register" && <RegistrationForm submitAction={() => setView("list")} />}
-        {view === "list" && <ListRegistrations />}
+        {view === "list" && <Registrations />}
       </div>
     </RegistrationContext.Provider>
   );
