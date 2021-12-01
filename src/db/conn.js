@@ -1,6 +1,8 @@
 const { MongoClient } = require("mongodb");
 // const connectionString = process.env.MONGO_URI;
-const connectionString = "mongodb://root:rootpassword@localhost:27017";
+const { USER_NAME, USER_PWD, DB_URL } = process.env;
+const connectionString = "mongodb://" + USER_NAME + ":" + USER_PWD + "@" + DB_URL + ":27017";
+// const connectionString = "mongodb://root:rootpassword@localhost:27017";
 const client = new MongoClient(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

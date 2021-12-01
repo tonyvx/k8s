@@ -9,7 +9,7 @@ var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
 
 
-dbo.connectToServer(() => console.log("Connected to mongodb..."));
+dbo.connectToServer((err) => console.log("Connected to mongodb...", err));
 
 var app = express();
 

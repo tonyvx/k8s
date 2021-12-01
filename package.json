@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=8080 node ./bin/www"
+    "start": "PORT=8080 USER_NAME=mongouser USER_PWD=mongopassword node ./bin/www",
+    "db": "docker container prune;docker image rm mongo:latest;docker volume rm k8s_mongodb_data_container;docker-compose up",
+    "image" : "docker build . -t tonyvx/nodejs-registration:1.0"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
